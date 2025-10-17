@@ -7,6 +7,20 @@
     <meta name="description" content="Download high-quality UGC-style product photography for beauty, fashion & lifestyle brands. 412+ professional images with commercial license. Accept crypto payments.">
     <meta name="keywords" content="UGC content, product photography, beauty images, fashion photography, lifestyle content, commercial license, crypto payment">
 
+    <!-- Enhanced SEO & Social Media Meta Tags -->
+    <meta property="og:title" content="Premium UGC Content Packs - 412 Professional Images | AgenciaUGC">
+    <meta property="og:description" content="Download high-quality UGC-style product photography. 412+ professional images for beauty, fashion & lifestyle brands. Crypto payments accepted.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cyberleakwatch.github.io/agenciaugc/">
+    <meta property="og:image" content="https://cyberleakwatch.github.io/agenciaugc/beauty-preview-1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium UGC Content Packs | AgenciaUGC">
+    <meta name="twitter:description" content="412+ professional UGC images for beauty, fashion & lifestyle brands. Instant download, crypto payments.">
+    <meta name="twitter:image" content="https://cyberleakwatch.github.io/agenciaugc/beauty-preview-1.jpg">
+    <meta name="author" content="AgenciaUGC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cyberleakwatch.github.io/agenciaugc/">
+
     <style>
         * {
             margin: 0;
@@ -615,14 +629,198 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Language Selector */
+        .lang-selector {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--bg-dark);
+        }
+
+        /* Social Proof Badge */
+        .social-proof {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-primary);
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 40px rgba(0, 212, 170, 0.3);
+            z-index: 1000;
+            animation: slideInLeft 0.5s ease;
+            max-width: 300px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .social-proof-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .social-proof-time {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            text-align: center;
+            padding: 12px 24px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-rating {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 768px) {
+            .social-proof {
+                left: 12px;
+                right: 12px;
+                bottom: 12px;
+                max-width: none;
+            }
+
+            .lang-selector {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-content {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        🔥 <span data-translate="urgency">LIMITED TIME: Get 20% OFF on Complete Bundle - Today Only!</span> 🔥
+    </div>
     <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="nav-content">
                 <div class="logo">AgenciaUGC</div>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="es">ES</button>
+                </div>
                 <a href="#products" class="nav-cta">View Products</a>
             </div>
         </div>
@@ -936,6 +1134,63 @@
         </div>
     </section>
 
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="testimonials-title">What Our Customers Say</h2>
+                <p class="section-description" data-translate="testimonials-subtitle">
+                    Join hundreds of satisfied creators and brands using our content.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text" data-translate="testimonial-1">
+                        "Absolutely worth it! The quality is outstanding and my Instagram engagement increased by 40%. Best investment for my beauty brand."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Sarah Martinez</div>
+                            <div class="testimonial-role" data-translate="role-1">Beauty Brand Owner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text" data-translate="testimonial-2">
+                        "Perfect for my agency clients. The fashion pack saved us thousands in photoshoot costs. Professional quality at an unbeatable price."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JL</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">James Liu</div>
+                            <div class="testimonial-role" data-translate="role-2">Marketing Agency Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text" data-translate="testimonial-3">
+                        "The complete library is a game-changer. Crypto payment was super easy. Downloaded instantly and using the images across all my client projects."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Anna Kowalski</div>
+                            <div class="testimonial-role" data-translate="role-3">Freelance Content Creator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -988,6 +1243,13 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Social Proof Badge -->
+    <div class="social-proof" id="socialProof" style="display: none;">
+        <p class="social-proof-text" data-translate="social-proof">🎉 Someone from Spain just purchased Beauty UGC Pack!</p>
+        <p class="social-proof-time" data-translate="social-time">2 minutes ago</p>
+    </div>
 
     <!-- Image Protection Script -->
     <script>
@@ -1050,6 +1312,112 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Multi-language Support & Marketing Features
+        const translations = {
+            en: {
+                'urgency': 'LIMITED TIME: Get 20% OFF on Complete Bundle - Today Only!',
+                'social-proof': '🎉 Someone from Spain just purchased Beauty UGC Pack!',
+                'social-time': '2 minutes ago',
+                'testimonials-title': 'What Our Customers Say',
+                'testimonials-subtitle': 'Join hundreds of satisfied creators and brands using our content.',
+                'testimonial-1': '"Absolutely worth it! The quality is outstanding and my Instagram engagement increased by 40%. Best investment for my beauty brand."',
+                'testimonial-2': '"Perfect for my agency clients. The fashion pack saved us thousands in photoshoot costs. Professional quality at an unbeatable price."',
+                'testimonial-3': '"The complete library is a game-changer. Crypto payment was super easy. Downloaded instantly and using the images across all my client projects."',
+                'role-1': 'Beauty Brand Owner',
+                'role-2': 'Marketing Agency Director',
+                'role-3': 'Freelance Content Creator'
+            },
+            es: {
+                'urgency': 'TIEMPO LIMITADO: 20% DE DESCUENTO en Paquete Completo - ¡Solo Hoy!',
+                'social-proof': '🎉 Alguien de España acaba de comprar el Paquete Beauty UGC!',
+                'social-time': 'hace 2 minutos',
+                'testimonials-title': 'Lo Que Dicen Nuestros Clientes',
+                'testimonials-subtitle': 'Únete a cientos de creadores y marcas satisfechos que usan nuestro contenido.',
+                'testimonial-1': '"¡Totalmente vale la pena! La calidad es excepcional y mi engagement en Instagram aumentó un 40%. La mejor inversión para mi marca de belleza."',
+                'testimonial-2': '"Perfecto para mis clientes de agencia. El pack de moda nos ahorró miles en costos de sesiones fotográficas. Calidad profesional a un precio inmejorable."',
+                'testimonial-3': '"La biblioteca completa es un cambio radical. El pago con crypto fue super fácil. Descarga instantánea y uso las imágenes en todos mis proyectos."',
+                'role-1': 'Propietaria de Marca de Belleza',
+                'role-2': 'Director de Agencia de Marketing',
+                'role-3': 'Creadora de Contenido Freelance'
+            }
+        };
+
+        // Get saved language or default to English
+        let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+        // Apply translations
+        function applyTranslations(lang) {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Language button click handlers
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                // Update active state
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Apply translations
+                applyTranslations(lang);
+            });
+        });
+
+        // Initialize language on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Set active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === currentLang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Apply initial translations
+            applyTranslations(currentLang);
+        });
+
+        // Social Proof Notifications
+        const socialProofMessages = [
+            { text: '🎉 Someone from Spain just purchased Beauty UGC Pack!', textEs: '🎉 Alguien de España compró el Paquete Beauty UGC!' },
+            { text: '💎 New sale: Complete UGC Library from Germany!', textEs: '💎 Nueva venta: Biblioteca UGC Completa desde Alemania!' },
+            { text: '🔥 Fashion pack purchased from United States!', textEs: '🔥 Pack de moda comprado desde Estados Unidos!' },
+            { text: '✨ Lifestyle UGC bundle sold to France!', textEs: '✨ Bundle UGC Lifestyle vendido a Francia!' }
+        ];
+
+        let currentMessageIndex = 0;
+
+        function showSocialProof() {
+            const proof = document.getElementById('socialProof');
+            const textEl = proof.querySelector('.social-proof-text');
+            const message = socialProofMessages[currentMessageIndex];
+
+            // Set text based on current language
+            textEl.textContent = currentLang === 'es' ? message.textEs : message.text;
+
+            proof.style.display = 'block';
+
+            setTimeout(() => {
+                proof.style.display = 'none';
+                currentMessageIndex = (currentMessageIndex + 1) % socialProofMessages.length;
+            }, 5000); // Show for 5 seconds
+        }
+
+        // Show first notification after 3 seconds
+        setTimeout(showSocialProof, 3000);
+
+        // Show subsequent notifications every 15 seconds
+        setInterval(showSocialProof, 15000);
     </script>
 </body>
 </html>
