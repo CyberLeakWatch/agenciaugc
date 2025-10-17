@@ -988,5 +988,68 @@
             </div>
         </div>
     </footer>
+
+    <!-- Image Protection Script -->
+    <script>
+        // Disable right-click on images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable dragging images
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable common screenshot shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Disable PrintScreen
+            if (e.key === 'PrintScreen') {
+                e.preventDefault();
+                alert('Screenshots are disabled for content protection.');
+            }
+            // Disable Ctrl+P (print)
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                alert('Printing is disabled for content protection.');
+            }
+            // Disable F12 (DevTools)
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
+            // Disable Ctrl+Shift+I (DevTools)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                e.preventDefault();
+            }
+            // Disable Ctrl+U (View Source)
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+            }
+        });
+
+        // Additional CSS protection for images
+        const style = document.createElement('style');
+        style.textContent = `
+            img {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-user-drag: none;
+                -khtml-user-drag: none;
+                -moz-user-drag: none;
+                -o-user-drag: none;
+                user-drag: none;
+                pointer-events: auto;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
