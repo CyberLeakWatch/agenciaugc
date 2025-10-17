@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium UGC Content Packs - AgenciaUGC</title>
-    <meta name="description" content="Professional AI-generated product photography for beauty, fashion & lifestyle brands. Instant download, commercial license included.">
+    <title>Premium UGC Content Packs - Professional Product Photography | AgenciaUGC</title>
+    <meta name="description" content="Download high-quality UGC-style product photography for beauty, fashion & lifestyle brands. 412+ professional images with commercial license. Accept crypto payments.">
+    <meta name="keywords" content="UGC content, product photography, beauty images, fashion photography, lifestyle content, commercial license, crypto payment">
 
     <style>
         * {
@@ -14,367 +15,916 @@
         }
 
         :root {
-            --bg-dark: #1a0b2e;
-            --bg-purple: #2a1650;
-            --accent-cyan: #00f5d4;
-            --accent-purple: #9d4edd;
-            --text-light: #f0f0f0;
-            --text-muted: #b8b8d1;
+            --bg-dark: #0a0a1a;
+            --bg-card: #1a1a2e;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #6366f1;
+            --accent-gold: #fbbf24;
+            --text-light: #f9fafb;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --border-color: rgba(99, 102, 241, 0.2);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-purple) 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg-dark);
             color: var(--text-light);
-            line-height: 1.6;
-            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Background gradient animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 212, 170, 0.15) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-cta {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-primary);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--accent-primary);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
+            padding: 100px 0 80px;
             text-align: center;
-            padding: 80px 20px 60px;
-            background: radial-gradient(ellipse at top, rgba(157, 78, 221, 0.15), transparent 70%);
+            position: relative;
         }
 
-        .hero-label {
-            color: var(--accent-cyan);
+        .hero-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid var(--accent-secondary);
+            color: var(--accent-secondary);
+            padding: 8px 20px;
+            border-radius: 50px;
             font-size: 0.875rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
             font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 900;
-            color: var(--accent-cyan);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 30px rgba(0, 245, 212, 0.3);
-            display: inline-block;
-            border: 3px solid var(--accent-cyan);
-            padding: 0.5rem 1.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
-        .hero-description {
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), #00b894);
+            color: var(--bg-dark);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 170, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-secondary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* Trust Badges */
+        .trust-section {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(26, 26, 46, 0.3);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 20px;
+        }
+
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .trust-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+
+        .section-description {
             font-size: 1.125rem;
             color: var(--text-muted);
             max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        /* Products Grid */
-        .products {
-            padding: 60px 20px;
+            margin: 0 auto;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
         }
 
         .product-card {
-            background: rgba(42, 22, 80, 0.5);
-            border: 2px solid rgba(157, 78, 221, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .product-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 245, 212, 0.2);
+            border-color: var(--accent-primary);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 212, 170, 0.15);
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
         }
 
         .product-card.featured {
-            border-color: var(--accent-cyan);
-            background: rgba(0, 245, 212, 0.05);
-            position: relative;
+            border-color: var(--accent-gold);
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.05), rgba(99, 102, 241, 0.05));
         }
 
-        .product-card.featured::before {
-            content: "BEST VALUE";
+        .product-badge {
             position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--accent-cyan);
+            top: 24px;
+            right: 24px;
+            background: var(--accent-gold);
             color: var(--bg-dark);
-            padding: 0.25rem 1rem;
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            border-radius: 4px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .product-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .product-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
         }
 
         .product-price {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 900;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 8px;
+            line-height: 1;
         }
 
-        .product-count {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
+        .product-price-note {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
 
         .product-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 32px;
         }
 
         .product-features li {
-            padding: 0.5rem 0;
+            padding: 12px 0;
             color: var(--text-muted);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-features li:last-child {
+            border-bottom: none;
         }
 
         .product-features li::before {
             content: "✓";
-            color: var(--accent-cyan);
+            color: var(--accent-primary);
             font-weight: bold;
-            margin-right: 0.75rem;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            text-align: center;
-            border: 2px solid;
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-product {
             width: 100%;
-            margin-bottom: 0.75rem;
-            cursor: pointer;
+            justify-content: center;
         }
 
-        .btn-primary {
-            background: var(--accent-cyan);
-            color: var(--bg-dark);
-            border-color: var(--accent-cyan);
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: rgba(26, 26, 46, 0.3);
         }
 
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .btn-secondary {
-            background: transparent;
+        .feature-card {
+            text-align: center;
+            padding: 32px 24px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(0, 212, 170, 0.1));
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 24px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--accent-primary);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .feature-description {
             color: var(--text-muted);
-            border-color: rgba(157, 78, 221, 0.5);
+            line-height: 1.6;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--accent-purple);
-            color: var(--accent-purple);
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .faq-question {
+            padding: 24px 28px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 28px 24px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(0, 212, 170, 0.1));
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Footer */
         .footer {
-            text-align: center;
-            padding: 3rem 20px;
-            border-top: 1px solid rgba(157, 78, 221, 0.3);
-            background: rgba(26, 11, 46, 0.5);
+            padding: 60px 0 40px;
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer h3 {
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
-        }
-
-        .footer p {
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .footer a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
         }
 
-        .footer-feature {
-            padding: 1rem;
+        .footer-section h3 {
+            color: var(--accent-primary);
+            margin-bottom: 20px;
+            font-size: 1.125rem;
         }
 
-        .footer-feature strong {
-            color: var(--accent-cyan);
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-dim);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 20px 40px;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-                padding: 0.5rem 1rem;
-            }
-
-            .products {
-                padding: 40px 20px;
+                padding: 60px 0 40px;
             }
 
             .products-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-cta {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">AgenciaUGC</div>
+                <a href="#products" class="nav-cta">View Products</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-label">Digital Content Library</div>
-            <h1 class="hero-title">UGC Content Packs</h1>
-            <p class="hero-description">
+            <div class="hero-badge">🚀 INSTANT DOWNLOAD • COMMERCIAL LICENSE INCLUDED</div>
+            <h1 class="hero-title">
+                Premium UGC Content<br>That Converts
+            </h1>
+            <p class="hero-subtitle">
                 Professional AI-generated product photography for beauty, fashion & lifestyle brands.
-                Instant download, commercial license included. Accept crypto payments.
+                Download instantly, start using today. No subscriptions, no hidden fees.
             </p>
+            <div class="hero-cta-group">
+                <a href="#products" class="btn btn-primary">
+                    Browse Content Packs
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-number">412+</div>
+                    <div class="trust-label">Premium Images</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">4</div>
+                    <div class="trust-label">Curated Packs</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">100%</div>
+                    <div class="trust-label">Commercial License</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">24/7</div>
+                    <div class="trust-label">Instant Access</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section class="products">
+    <section id="products" class="products-section">
         <div class="container">
-            <div class="products-grid">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Content Pack</h2>
+                <p class="section-description">
+                    Professional-grade UGC content ready to elevate your brand. Each pack includes high-resolution images with full commercial rights.
+                </p>
+            </div>
 
+            <div class="products-grid">
                 <!-- Product 1: Beauty -->
                 <div class="product-card">
-                    <h2 class="product-title">Beauty Product UGC Bundle</h2>
+                    <div class="product-icon">💄</div>
+                    <h3 class="product-title">Beauty Product UGC</h3>
                     <div class="product-price">$21</div>
-                    <div class="product-count">103 Premium Images</div>
+                    <div class="product-price-note">103 Premium Images</div>
                     <ul class="product-features">
                         <li>High-quality beauty & skincare photos</li>
                         <li>Perfect for Instagram, TikTok, Pinterest</li>
+                        <li>Professional lighting & composition</li>
                         <li>Commercial license included</li>
-                        <li>Instant download (ZIP format)</li>
+                        <li>Instant ZIP download</li>
                     </ul>
-                    <a href="https://nowpayments.io/payment/?iid=5591982914" class="btn btn-primary" target="_blank">Buy with Crypto - $21</a>
-                    <a href="https://drive.google.com/file/d/1NMyXRy7cYG9LA0Sdahi05ttp1PXhBhEf/view?usp=drive_link" class="btn btn-secondary" target="_blank">View Sample</a>
+                    <div class="product-actions">
+                        <a href="https://nowpayments.io/payment/?iid=5591982914" class="btn btn-primary btn-product" target="_blank">
+                            Buy with Crypto - $21
+                        </a>
+                        <a href="https://drive.google.com/file/d/1NMyXRy7cYG9LA0Sdahi05ttp1PXhBhEf/view?usp=drive_link" class="btn btn-secondary btn-product" target="_blank">
+                            View Samples
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Product 2: Fashion -->
                 <div class="product-card">
-                    <h2 class="product-title">Fashion & Luxury UGC Collection</h2>
+                    <div class="product-icon">👗</div>
+                    <h3 class="product-title">Fashion & Luxury UGC</h3>
                     <div class="product-price">$21</div>
-                    <div class="product-count">104 Premium Images</div>
+                    <div class="product-price-note">104 Premium Images</div>
                     <ul class="product-features">
                         <li>Fashion, clothing & luxury accessories</li>
                         <li>Designer handbags, jewelry, blazers</li>
+                        <li>Professional styling & composition</li>
                         <li>Commercial license included</li>
-                        <li>Instant download (ZIP format)</li>
+                        <li>Instant ZIP download</li>
                     </ul>
-                    <a href="https://nowpayments.io/payment/?iid=5101433184" class="btn btn-primary" target="_blank">Buy with Crypto - $21</a>
-                    <a href="https://drive.google.com/file/d/1xSJxyZu_cPOCFSudmHWH_SppMVg_gtcF/view?usp=drive_link" class="btn btn-secondary" target="_blank">View Sample</a>
+                    <div class="product-actions">
+                        <a href="https://nowpayments.io/payment/?iid=5101433184" class="btn btn-primary btn-product" target="_blank">
+                            Buy with Crypto - $21
+                        </a>
+                        <a href="https://drive.google.com/file/d/1xSJxyZu_cPOCFSudmHWH_SppMVg_gtcF/view?usp=drive_link" class="btn btn-secondary btn-product" target="_blank">
+                            View Samples
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Product 3: Lifestyle -->
                 <div class="product-card">
-                    <h2 class="product-title">Luxury Lifestyle UGC Bundle</h2>
+                    <div class="product-icon">✨</div>
+                    <h3 class="product-title">Luxury Lifestyle UGC</h3>
                     <div class="product-price">$32</div>
-                    <div class="product-count">103 Premium Images</div>
+                    <div class="product-price-note">103 Premium Images</div>
                     <ul class="product-features">
                         <li>Premium lifestyle & luxury products</li>
                         <li>Tech gadgets, unboxing moments</li>
+                        <li>High-end brand experiences</li>
                         <li>Commercial license included</li>
-                        <li>Instant download (ZIP format)</li>
+                        <li>Instant ZIP download</li>
                     </ul>
-                    <a href="https://nowpayments.io/payment/?iid=6264828542" class="btn btn-primary" target="_blank">Buy with Crypto - $32</a>
-                    <a href="https://drive.google.com/file/d/1PZlWJyCfCBX7VhlobufEi8JRrbISxWal/view?usp=drive_link" class="btn btn-secondary" target="_blank">View Sample</a>
+                    <div class="product-actions">
+                        <a href="https://nowpayments.io/payment/?iid=6264828542" class="btn btn-primary btn-product" target="_blank">
+                            Buy with Crypto - $32
+                        </a>
+                        <a href="https://drive.google.com/file/d/1PZlWJyCfCBX7VhlobufEi8JRrbISxWal/view?usp=drive_link" class="btn btn-secondary btn-product" target="_blank">
+                            View Samples
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Product 4: Complete (Featured) -->
                 <div class="product-card featured">
-                    <h2 class="product-title">🎁 Complete UGC Library</h2>
+                    <div class="product-badge">BEST VALUE</div>
+                    <div class="product-icon">🎁</div>
+                    <h3 class="product-title">Complete UGC Library</h3>
                     <div class="product-price">$65</div>
-                    <div class="product-count">ALL 412 Premium Images</div>
+                    <div class="product-price-note">ALL 412 Premium Images • Save $20!</div>
                     <ul class="product-features">
                         <li>Complete collection (Beauty + Fashion + Lifestyle)</li>
-                        <li>Save $20 compared to individual packs</li>
                         <li>Perfect for agencies & multi-brand campaigns</li>
-                        <li>Commercial license included</li>
+                        <li>Unlimited commercial use</li>
+                        <li>Priority email support</li>
+                        <li>Instant ZIP download</li>
                     </ul>
-                    <a href="https://nowpayments.io/payment/?iid=4713399326" class="btn btn-primary" target="_blank">Buy Complete Bundle - $65</a>
-                    <a href="https://drive.google.com/file/d/1OGup14c80a-kTyxu2D5h9lzCbN5VIkMO/view?usp=drive_link" class="btn btn-secondary" target="_blank">View Sample</a>
+                    <div class="product-actions">
+                        <a href="https://nowpayments.io/payment/?iid=4713399326" class="btn btn-primary btn-product" target="_blank">
+                            Buy Complete Bundle - $65
+                        </a>
+                        <a href="https://drive.google.com/file/d/1OGup14c80a-kTyxu2D5h9lzCbN5VIkMO/view?usp=drive_link" class="btn btn-secondary btn-product" target="_blank">
+                            View Samples
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose AgenciaUGC?</h2>
+                <p class="section-description">
+                    Professional content without the hassle. Get started in minutes, not months.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Instant Download</h3>
+                    <p class="feature-description">
+                        Get immediate access to your content pack. No waiting, no approval process. Download and start using within minutes.
+                    </p>
                 </div>
 
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3 class="feature-title">Commercial License</h3>
+                    <p class="feature-description">
+                        Full commercial rights included. Use on social media, websites, ads, client work—no attribution required.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Professional Quality</h3>
+                    <p class="feature-description">
+                        AI-generated images with professional lighting, composition, and styling. Indistinguishable from real product photography.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Secure Crypto Payments</h3>
+                    <p class="feature-description">
+                        Pay with Bitcoin, Ethereum, USDT, and more. Secure, private, and processed instantly via NOWPayments.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">One-Time Payment</h3>
+                    <p class="feature-description">
+                        No subscriptions. Pay once, own forever. Use the images unlimited times across all your projects.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3 class="feature-title">Email Support</h3>
+                    <p class="feature-description">
+                        Questions? We're here to help. Reach out anytime and get a response within 24 hours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's included in each pack?
+                    </div>
+                    <div class="faq-answer">
+                        Each pack includes high-resolution JPEG images (1080x1350px+) optimized for social media and web use. You'll receive a ZIP file with all images organized and ready to use immediately.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I use these for commercial projects?
+                    </div>
+                    <div class="faq-answer">
+                        Yes! All packs include a full commercial license. Use them for client work, social media posts, advertising campaigns, e-commerce listings, and more. No attribution required.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I download after purchasing?
+                    </div>
+                    <div class="faq-answer">
+                        After completing your crypto payment via NOWPayments, contact us at contacto@cyberleakwatch.com with your payment confirmation. We'll send your download link within minutes (usually instant).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                    </div>
+                    <div class="faq-answer">
+                        We accept cryptocurrency payments via NOWPayments, including Bitcoin (BTC), Ethereum (ETH), USDT, and 100+ other cryptocurrencies. Payment is secure, private, and processed instantly.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are these real photos or AI-generated?
+                    </div>
+                    <div class="faq-answer">
+                        These are high-quality AI-generated images created with professional prompts and settings. They look indistinguishable from real product photography and are perfect for modern brand content.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I get a refund?
+                    </div>
+                    <div class="faq-answer">
+                        Due to the digital nature of our products, all sales are final. However, you can view sample images before purchasing to ensure the pack meets your needs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Elevate Your Brand?</h2>
+            <p class="cta-subtitle">
+                Join hundreds of creators and brands using our content to grow their presence. Download instantly and start creating today.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#products" class="btn btn-primary">
+                    Browse Content Packs
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <h3>How It Works</h3>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgenciaUGC</h3>
+                    <p>Premium UGC content for modern brands. Professional quality, instant delivery, commercial license included.</p>
+                </div>
 
-            <div class="footer-features">
-                <div class="footer-feature">
-                    <strong>1. Choose Your Pack</strong>
-                    <p>Select the content pack that fits your needs</p>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <a href="#products">Beauty UGC Bundle</a>
+                    <a href="#products">Fashion & Luxury UGC</a>
+                    <a href="#products">Lifestyle Luxury UGC</a>
+                    <a href="#products">Complete UGC Library</a>
                 </div>
-                <div class="footer-feature">
-                    <strong>2. Pay with Crypto</strong>
-                    <p>Secure payment via NOWPayments (BTC, ETH, USDT accepted)</p>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p>Email: <a href="mailto:contacto@cyberleakwatch.com">contacto@cyberleakwatch.com</a></p>
+                    <p>Response time: Within 24 hours</p>
+                    <p>Payment support: Crypto via NOWPayments</p>
                 </div>
-                <div class="footer-feature">
-                    <strong>3. Instant Download</strong>
-                    <p>Get your ZIP file immediately after payment</p>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <p>All images include full commercial license</p>
+                    <p>One-time payment, lifetime access</p>
+                    <p>No attribution required</p>
                 </div>
             </div>
 
-            <p><strong>Questions?</strong> Email: <a href="mailto:contacto@cyberleakwatch.com">contacto@cyberleakwatch.com</a></p>
-            <p style="margin-top: 2rem; font-size: 0.875rem; opacity: 0.7;">
-                © 2025 AgenciaUGC | Commercial license included with all purchases | Instant delivery
-            </p>
+            <div class="footer-bottom">
+                © 2025 AgenciaUGC. All rights reserved. | Instant delivery • Commercial license • Crypto payments accepted
+            </div>
         </div>
     </footer>
 </body>
