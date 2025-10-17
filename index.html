@@ -810,7 +810,7 @@
 <body>
     <!-- Urgency Banner -->
     <div class="urgency-banner">
-        🔥 <span data-translate="urgency">LIMITED TIME: Get 20% OFF on Complete Bundle - Today Only!</span> 🔥
+        <span data-translate="urgency">🔥 LIMITED TIME: Get 20% OFF on Complete Bundle - Today Only! 🔥</span>
     </div>
     <!-- Navigation -->
     <nav>
@@ -1246,7 +1246,7 @@
 
     <!-- Social Proof Badge -->
     <div class="social-proof" id="socialProof" style="display: none;">
-        <p class="social-proof-text" data-translate="social-proof">🎉 Someone from Spain just purchased Beauty UGC Pack!</p>
+        <p class="social-proof-text" data-translate="social-proof">Someone from Spain just purchased Beauty UGC Pack!</p>
         <p class="social-proof-time" data-translate="social-time">2 minutes ago</p>
     </div>
 
@@ -1386,7 +1386,7 @@
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+                    element.innerHTML = translations[lang][key];
                 }
             });
         }
